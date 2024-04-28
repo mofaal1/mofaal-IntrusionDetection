@@ -1,4 +1,4 @@
-# mofaal-IntrusionDetection
+# Intrusion Detection with Snort
 ## Objective
 
 Implement and explore Snort, an open-source network-based intrusion detection system (NIDS), to bolster defensive measures against network-based attacks. This project entails configuring Snort to detect simple traffic patterns such as port scans, using both pre-defined and custom rules.
