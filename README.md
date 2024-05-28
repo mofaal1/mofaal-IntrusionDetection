@@ -3,24 +3,128 @@
 
 Implement and explore Snort, an open-source network-based intrusion detection system (NIDS), to bolster defensive measures against network-based attacks. This project entails configuring Snort to detect simple traffic patterns such as port scans, using both pre-defined and custom rules.
 
-## Actions Taken
+### Skills Learned
 
-### Setting Up the Environment
+- **Implementation and Configuration:**  
+  Experience gained in setting up and configuring Snort for intrusion detection purposes.
 
-- Started Snort in the Windows 2008 VM by running the command `snort –W` to verify proper initialization.
+- **Rule-based IDS Concepts:**  
+  Understanding developed in rule-based IDS concepts and their practical application within Snort.
 
-### Configuration with Native Rules Files
+- **Alerts and Logs Analysis:**  
+  Proficiency acquired in analyzing and interpreting Snort alerts and logs to identify potential security threats.
 
-- Created a configuration file and ensured the presence of the dos.rules file in the designated directories.
-- Ran Snort with the specified configuration file and monitored the command console for activity.
+- **Custom Rule Creation:**  
+  Ability developed to customize Snort rules to match specific network security requirements.
 
-### Configuration with Custom-Made Rules Files
+- **Network Traffic Analysis:**  
+  Familiarity gained with network traffic analysis tools such as Wireshark, enhancing the capability to identify anomalies and potential security breaches.
 
-- Crafted a custom rules file named xmas.rules and incorporated it into the Snort configuration.
-- Modified the configuration file accordingly and re-ran Snort to apply the new rules.
+### Tools Used
 
-### Logging to Windows Event Log
+- **Snort:**  
+  Open-source network intrusion detection system used for monitoring and analyzing network traffic for potential security threats.
 
-- Enhanced logging capabilities by adding `-y` and `-E` switches to the Snort command.
-- Monitored the Windows event log for Snort-generated events, focusing on those related to Port 139.
+- **Wireshark:**  
+  Network protocol analyzer utilized for capturing and examining packet data to identify network abnormalities or malicious activity.
 
+- **Nmap:**  
+  Network scanning tool used for discovering hosts and services on a computer network, thus aiding in vulnerability assessment and network inventory.
+
+- **Zenmap:**  
+  Graphical user interface (GUI) for Nmap, providing an intuitive way to interact with Nmap for network scanning and analysis.
+
+- **Various Analysis Tools:**  
+  I employed various analysis tools to interpret Snort alerts and logs effectively, enhancing the understanding of network security threats.
+
+
+## Steps
+
+#### Step 1: Preparing the System
+
+1. **Opened Command Console:**
+   - Ran `snort -W` in the Windows 2008 VM to verify Snort started correctly and noted the interface number.
+
+#### Step 2: Configuring Snort to Use Native Rule Files
+
+1. **Created Configuration File:**
+   - Typed configuration settings in Notepad and saved as `<FirstInitial><LastName>.conf` in `C:\Snort\etc`.
+
+2. **Verified Rule File and Ran Snort:**
+   - Ensured `dos.rules` was in `C:\Snort\rules`.
+   - Ran Snort with `snort -c C:\Snort\etc\<FirstInitial><LastName>.conf -l C:\Snort\log -de -i 1`.
+   - Verified Snort started correctly.
+
+
+3. **Noted Time for Zenmap Scan:**
+   - Recorded the time before starting the Zenmap `-sT` scan.
+
+4. **Checked Alert Entries in alert.ids:**
+   - Verified entries in `alert.ids` matched the recorded time.
+
+5. **Analyzed ps2log File:**
+   - Verified ephemeral ports and the state of the scanned ports in `ps2log`.
+
+#### Step 3: Running and Analyzing Xmas Scan
+
+1. **Ran Xmas Scan:**
+   - Created `xmas.rules` and updated the configuration file.
+   - Reran Snort with the updated configuration.
+   - Ran `nmap -sX -p 135-139 10.1.xx.161` in Zenmap.
+   - Verified Snort detected the Xmas scan.
+  
+2. **Checked Control Bits with Wireshark:**
+   - Opened `snort.log` in Wireshark.
+   - Verified control bits and ephemeral port used in the Xmas scan.
+
+#### Step 4: Logging to Windows Events
+
+1. **Logged Snort Events:**
+   - Modified Snort command to include `-y -E` switches and started Snort.
+   - Reran Zenmap Xmas scan.
+   - Verified five Snort-generated events in Event Viewer.
+
+2. **Reviewed Event Properties:**
+   - Checked details related to scanning Port 139 in Event Properties.
+  
+### Screenshots
+
+- **Snort Command Console:**  
+  This screenshot displays the Snort command console, showing the piggy icon in the upper left corner, indicating successful detection.
+
+  ![Snort command console screenshot]([https://imgur.com/a/mrL79YZ](https://imgur.com/a/mrL79YZ)))
+
+- **Windows 2008 Time:**  
+  This screenshot shows the current time in Windows 2008, specifically indicating 8:45, recorded before initiating the Zenmap –sT scan.
+
+  ![Windows 2008 time screenshot](link_to_windows_2008_time_image)
+
+- **alert.ids File:**  
+  This screenshot showcases the alert.ids file, highlighting entries matching the time recorded in Question 4.1.2, confirming the presence of relevant alerts.
+
+  ![alert.ids file screenshot](link_to_alert_ids_file_image)
+
+- **ps2log File:**  
+  This screenshot displays the ps2log file, presenting the ephemeral ports used by the attacker machine to scan five ports on IP address 10.1.188.161. It confirms two ports as open and three as filtered, corroborating the Nmap scan results.
+
+  ![ps2log file screenshot](link_to_ps2log_file_image)
+
+- **Alert Log File:**  
+  This screenshot reveals the alert log file, indicating one alert containing the wording “BCIS 4630 Xmas Scan”. It provides information about the control bits turned on and the ephemeral port used in this scan.
+
+  ![Alert log file screenshot](link_to_alert_log_file_image)
+
+- **Wireshark:**  
+  This screenshot from Wireshark illustrates the control bits indicated as turned on during the Xmas scan and showcases the ephemeral port used (135-139). It confirms the information reported in the alert.ids file.
+
+  ![Wireshark screenshot](link_to_wireshark_image)
+
+- **Event Viewer:**  
+  This screenshot displays the Event Viewer, showcasing five Snort-generated events as requested in Question 4.3.1, confirming their presence.
+
+  ![Event Viewer screenshot](link_to_event_viewer_image)
+
+- **Event Properties (Port 139):**  
+  This screenshot shows the Event Properties related to scanning Port 139, fulfilling the requirement of Question 4.3.2 by providing specific details related to this port scanning event.
+
+  ![Event Properties screenshot](link_to_event_properties_image)
