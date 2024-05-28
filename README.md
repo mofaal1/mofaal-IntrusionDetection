@@ -25,9 +25,6 @@ Implement and explore Snort, an open-source network-based intrusion detection sy
 - **Snort:**  
   Open-source network intrusion detection system used for monitoring and analyzing network traffic for potential security threats.
 
-- **Wireshark:**  
-  Network protocol analyzer utilized for capturing and examining packet data to identify network abnormalities or malicious activity.
-
 - **Nmap:**  
   Network scanning tool used for discovering hosts and services on a computer network, thus aiding in vulnerability assessment and network inventory.
 
