@@ -84,47 +84,27 @@ Implement and explore Snort, an open-source network-based intrusion detection sy
    - Reran Zenmap Xmas scan.
    - Verified five Snort-generated events in Event Viewer.
 
-2. **Reviewed Event Properties:**
-   - Checked details related to scanning Port 139 in Event Properties.
   
 ### Screenshots
 
 - **Snort Command Console:**  
   This screenshot displays the Snort command console, showing the piggy icon in the upper left corner, indicating successful detection.
 
-  ![Snort command console screenshot]([https://imgur.com/a/mrL79YZ](https://imgur.com/a/mrL79YZ)))
+  ![piggy](https://github.com/Mofaal/mofaal-IntrusionDetection/assets/137732122/a2b98e86-8e5f-4cc8-859d-3bf2fcbb19c4)
 
-- **Windows 2008 Time:**  
-  This screenshot shows the current time in Windows 2008, specifically indicating 8:45, recorded before initiating the Zenmap –sT scan.
-
-  ![Windows 2008 time screenshot](link_to_windows_2008_time_image)
-
+  
 - **alert.ids File:**  
   This screenshot showcases the alert.ids file, highlighting entries matching the time recorded in Question 4.1.2, confirming the presence of relevant alerts.
 
-  ![alert.ids file screenshot](link_to_alert_ids_file_image)
+  ![alert](https://github.com/Mofaal/mofaal-IntrusionDetection/assets/137732122/db90db77-4749-4596-92d1-00f57fc4560b)
 
 - **ps2log File:**  
-  This screenshot displays the ps2log file, presenting the ephemeral ports used by the attacker machine to scan five ports on IP address 10.1.188.161. It confirms two ports as open and three as filtered, corroborating the Nmap scan results.
-
-  ![ps2log file screenshot](link_to_ps2log_file_image)
-
-- **Alert Log File:**  
-  This screenshot reveals the alert log file, indicating one alert containing the wording “BCIS 4630 Xmas Scan”. It provides information about the control bits turned on and the ephemeral port used in this scan.
-
-  ![Alert log file screenshot](link_to_alert_log_file_image)
-
-- **Wireshark:**  
-  This screenshot from Wireshark illustrates the control bits indicated as turned on during the Xmas scan and showcases the ephemeral port used (135-139). It confirms the information reported in the alert.ids file.
-
-  ![Wireshark screenshot](link_to_wireshark_image)
+  This screenshot displays the ps2log file, presenting the ephemeral ports used by the attacker machine to scan five ports on IP address 10.1.188.161 It confirms two ports as open and three as filtered, corroborating the Nmap scan results.
+  
+  ![ps2](https://github.com/Mofaal/mofaal-IntrusionDetection/assets/137732122/f773052c-8277-4cef-a94f-ef5ec55238d8)
 
 - **Event Viewer:**  
   This screenshot displays the Event Viewer, showcasing five Snort-generated events as requested in Question 4.3.1, confirming their presence.
+  
+  ![Picture1](https://github.com/Mofaal/mofaal-IntrusionDetection/assets/137732122/aa2ef243-9670-4b06-b58d-a980479bccb0)
 
-  ![Event Viewer screenshot](link_to_event_viewer_image)
-
-- **Event Properties (Port 139):**  
-  This screenshot shows the Event Properties related to scanning Port 139, fulfilling the requirement of Question 4.3.2 by providing specific details related to this port scanning event.
-
-  ![Event Properties screenshot](link_to_event_properties_image)
